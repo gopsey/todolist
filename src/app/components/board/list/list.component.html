@@ -1,0 +1,48 @@
+<div class="main">
+    <div class="list-head-wrapper">
+        <div class="addList">
+            <p>List {{titleName + 1}}</p>
+        </div>
+        <div class="delete-button">
+            <input type="button" value="Delete this list" (click)="deleteList($event)" id={{deleteListId}} />
+        </div>
+    </div>
+
+    <div cdkDropList class="drag-drop-list-wrapper" (cdkDropListDropped)="drop($event)">
+        <div class="app-card-wrapper drag-drop-list" *ngFor="let card of cardArray; let i = index"
+            (click)="openModal(i)" cdkDrag>
+            <app-card [cardArray]="cardArray" [cardName]="card.titleName"></app-card>
+        </div>
+    </div>
+
+    <div class="add-card-button">
+        <p (click)="addNewCard($event)" id="{{addCardId}}">Add new card...</p>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" (click)="closeModalOutside()">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="cardTitle">
+                    <input type="text" value="{{cardTitle}}" />
+                </div>
+                <div class="description-delete-wrapper">
+                    <textarea placeholder="Card description"></textarea>
+                    <input type="button" value="Delete card" class="deleteClass delete-card" (click)="deleteCard($event)" />
+                    <span class="listValue" style="display: none"></span>
+                </div>
+                <div class="comment">
+                    <textarea rows="5" id="commentText"></textarea>
+                </div>
+                <div class="commentBtnWrapper">
+                    <input class="delete-card" type="button" value="Add Comment" (click)="saveComment()" />
+                </div>
+                <div class="addedComments">
+                    <div *ngFor="let comment of commentTextValue">
+                        <p>{{comment}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

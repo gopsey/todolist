@@ -1,0 +1,19 @@
+.appTitle {
+    padding-left: 15px;
+}
+.appTitle p {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+.box {
+    height: 15px;
+    width: 15px;
+    background-color: #666666;
+    border-radius: 2px;
+}
+.title-wrapper { 
+    display: flex;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}

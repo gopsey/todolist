@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "todolist-by-gopal"
+    }
+  },
+  "defaultProject": "todolist-by-gopal",
+  "cli": {
+    "analytics": "359be724-8c7d-4521-a2d6-f10876dc72fb"
+  }
 }

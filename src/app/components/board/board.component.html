@@ -1,0 +1,17 @@
+<div class="main-class">
+    <p>Your Board</p>
+    <div class="listContainer">
+        <div cdkDropList cdkDropListOrientation="horizontal" class="drag-drop-list-wrapper"
+            (cdkDropListDropped)="drop($event)">
+            <div class="drag-drop-list" *ngFor="let singleList of listArrayFromBoard; let i = index" cdkDrag>
+                <app-list [titleName]="listArrayFromBoard[i].addCardId" [deleteListId]="i" [addCardId]="i"
+                    (deleteListEvent)="delete($event)" (cardArrayToParent)="updateCards($event)"
+                    (cardToDelete)="deleteCard($event)" (listToDeleteCard)="setListToDeleteCard($event)">
+                </app-list>
+            </div>
+        </div>
+        <div class="addList">
+            <p (click)="addNewList()">Add new list...</p>
+        </div>
+    </div>
+</div>
